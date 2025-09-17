@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .quiz-container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .option-btn {
+            width: 100%;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .timer {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .result-summary {
+            display: none;
+        }
+
+        #result-summary {
+            display: none;
+        }
+        .start{
+            max-width: 700px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="start text-center" id="close">
+            <button class="py-2 px-3 btn btn-outline-secondary" id="start">start quiz</button>
+        </div>
+        <div class="quiz-container" id="quiz">
+            <h3 class="text-center mb-4">Cricket Quiz Challenge</h3>
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div id="timer" class="timer border border-2 border-black px-2 py-1 rounded-3 bg-black text-light">
+                </div>
+                <div></div>
+            </div>
+
+            <div id="question-box" class="mb-4">
+                <h5 id="question"></h5>
+            </div>
+
+            <div id="options-box" class="d-grid gap-2">
+                <button class="btn btn-outline-secondary option-btn text-black" id="q1"
+                    onclick="return selectAnswer(0)"></button>
+                <button class="btn btn-outline-secondary option-btn text-black" id="q2"
+                    onclick="return selectAnswer(1)"></button>
+                <button class="btn btn-outline-secondary option-btn text-black" id="q3"
+                    onclick="return selectAnswer(2)"></button>
+                <button class="btn btn-outline-secondary option-btn text-black" id="q4"
+                    onclick="return selectAnswer(3)"></button>
+            </div>
+
+            <p id="result"></p>
+            <div id="result-summary" class="mt-4 result-summary">
+                <h4>Quiz Completed!</h4>
+                <p>Total Questions: <span id="total-questions">0</span></p>
+                <p>Correct Answers: <span id="correct-answers">0</span></p>
+                <p>Final Score: <span id="final-score">0</span></p>
+                <p>Total Time Taken: <span id="total-time">0</span>s</p>
+                <button class="btn btn-success mt-3" id="retry-btn">Restart Quiz</button>
+            </div>
+
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
